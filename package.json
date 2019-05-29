@@ -1,0 +1,19 @@
+{
+  "name": "mcj-test-vueui",
+  "version": "0.0.1",
+  "description": "一个vue的UI组件-测试项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diexihua/mcj-test-vueui.git"
+  },
+  "author": "mcj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diexihua/mcj-test-vueui/issues"
+  },
+  "homepage": "https://github.com/diexihua/mcj-test-vueui#readme"
+}
