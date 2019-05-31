@@ -3,6 +3,8 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+
 const config = new Config();
 
 const {
@@ -21,6 +23,15 @@ config
     .filename('mcjView.bundle.js');
 
 config.module
+  .rule('vue')
+    .test(/\.vue$/)
+    .include
+      .add(path.resolve('src'))
+      .end()
+    .use('vue')
+      .loader('vue-loader')
+
+config.module
   .rule('js')
     .test(/\.js$/)
     .include
@@ -32,7 +43,17 @@ config.module
         presets: [
           ['@babel/preset-env', { modules: false }]
         ]
-      });
+      })
+      .end()
+    .use('eslint')
+      .loader('eslint-loader')
+      .options({
+        extensions: [
+          '.js',
+          '.jsx',
+          '.vue'
+        ]
+      })
 
 config.module
   .rule('less')
@@ -57,8 +78,14 @@ config
     .end()
   .plugin('cleanWebpackPlugin')
     .use(CleanWebpackPlugin)
+    .end()
+  .plugin('Vue')
+    .use(VueLoaderPlugin)
 
 config.resolve
+  .extensions
+    .merge(['.js', '.jsx', '.vue', '.json'])
+    .end()
   .alias
     .set('@', path.resolve('src'));
 

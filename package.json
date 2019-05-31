@@ -4,7 +4,7 @@
   "description": "一个vue的UI组件-测试项目",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "build": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,25 @@
   "bugs": {
     "url": "https://github.com/diexihua/mcj-test-vueui/issues"
   },
-  "homepage": "https://github.com/diexihua/mcj-test-vueui#readme"
+  "homepage": "https://github.com/diexihua/mcj-test-vueui#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-loader": "^2.1.2",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "style-loader": "^0.23.1",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.32.2",
+    "webpack-chain": "^6.0.0",
+    "webpack-cli": "^3.3.2"
+  }
 }
