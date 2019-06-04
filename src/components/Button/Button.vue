@@ -1,24 +1,24 @@
 <template>
   <div>
     <button class="mcj-button" @click="click">
-      <slot></slot>
+      <slot />
     </button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'mcj-button',
+  name: 'McjButton',
   methods: {
     click() {
-      this.$emit('click');
-    },
-  },
-};
+      this.$emit('click')
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
-@import "../../styles/common";
+@import '../../styles/common';
 
 @fontSize: 14px;
 @baseColor: #2d8cf0;
@@ -39,5 +39,4 @@ export default {
     outline: none;
   }
 }
-
 </style>
